@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS素材コピー・全タグ個別仕様書</title>
+  <style>
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.6;color:#333;max-width:750px;margin:0 auto;padding:20px;background:#f5f7fa}
+    .card{background:#fff;border-radius:8px;padding:20px;margin-bottom:20px;box-shadow:0 2px 4px rgba(0,0,0,0.08)}
+    h1{font-size:20px;margin-top:0;color:#111;border-bottom:2px solid #26a69a;padding-bottom:8px}
+    h2{font-size:16px;color:#26a69a;margin-top:0}
+    ol{padding-left:20px;margin:0 0 15px 0}
+    li{margin-bottom:8px;font-size:14px}
+    .code-inline{background:#e0f2f1;color:#004d40;padding:2px 6px;border-radius:4px;font-family:monospace;font-size:13px;font-weight:bold}
+    textarea{width:100%;height:80px;font-family:monospace;font-size:12px;padding:10px;box-sizing:border-box;border:1px solid #ccc;border-radius:4px;resize:none;background:#fafafa;margin-bottom:15px}
+    button{width:100%;height:44px;background:#26a69a;color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:bold;cursor:pointer;transition:background 0.2s}
+    button:active{background:#1e7e75}
+    .toast{display:none;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.8);color:#fff;padding:10px 20px;border-radius:20px;font-size:14px;z-index:9999}
+    .table-spec{width:100%;border-collapse:collapse;margin-top:10px;margin-bottom:15px}
+    .table-spec th,.table-spec td{border:1px solid #ddd;padding:10px;text-align:left;font-size:13px;vertical-align:top}
+    .table-spec th{background:#f1f1f1}
+    .tag-badge{background:#e1f5fe;color:#01579b;padding:2px 4px;border-radius:3px;font-family:monospace;font-size:11px}
+  </style>
+</head>
+<body>
+    <h1 style="font-size:40px;">norituru css素材　ver1.0</h1>
+      <div class="card">
+    <h2>CSSコード</h2>
+    <textarea id="cssText" readonly>html{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:15px;line-height:1.5;color:#212121;background-color:#fafafa;transition:background-color .3s,color .3s}body{margin:0;padding:0}a{color:#039be5;text-decoration:none}button,.btn{display:inline-block;height:36px;padding:0 16px;font-size:14px;text-transform:uppercase;border:none;border-radius:2px;background-color:#26a69a;color:#fff;box-shadow:0 2px 2px 0 rgba(0,0,0,.14);cursor:pointer}table{width:100%;border-collapse:collapse;margin:1rem 0}th,td{padding:15px 5px;border-bottom:1px solid #e0e0e0;text-align:left}.card,article{background:#fff;border-radius:2px;padding:24px;margin:.5rem 0 1rem 0;box-shadow:0 2px 2px 0 rgba(0,0,0,.14)}html.dark,body.dark,main.dark,section.dark,div.dark,.card.dark,article.dark{background-color:#121212!important;color:#fff!important}h1.dark,h2.dark,h3.dark,h4.dark,h5.dark,h6.dark,p.dark,span.dark,li.dark{color:#e0e0e0!important}a.dark{color:#80cbdc!important}button.dark,.btn.dark{background-color:#00796b!important;color:#fff!important}input.dark,textarea.dark,select.dark{color:#fff!important;background-color:#202124!important;border-bottom:1px solid #555!important}img.dark,video.dark,iframe.dark,canvas.dark{filter:brightness(.8) contrast(1.1)!important}html.focus,body.focus,main.focus,div.focus,.card.focus,article.focus{filter:grayscale(100%)!important;box-shadow:none!important}nav.focus,aside.focus,footer.focus,[class*="ad-"].focus,[class*="banner"].focus{display:none!important}h1.focus,h2.focus,h3.focus{border-left:5px solid #000!important;padding-left:12px!important;font-weight:900!important}p.focus{color:#000!important;font-weight:500!important}img[src$=".gif"].focus,marquee.focus{display:none!important}body.read,main.read,section.read,div.read,article.read{max-width:720px!important;margin:0 auto!important;padding:40px 20px!important;background-color:#fbf9f4!important}p.read{font-size:19px!important;line-height:2.0!important;letter-spacing:.06em!important;color:#2b2b2b!important;margin-bottom:2rem!important}h1.read{font-size:2.5rem!important;margin-top:3rem!important;margin-bottom:1.5rem!important}h2.read{font-size:2rem!important;margin-top:2.5rem!important;margin-bottom:1.2rem!important;border-bottom:1px solid #ccc!important;padding-bottom:8px!important}blockquote.read{margin:2rem 0!important;padding-left:20px!important;border-left:5px solid #26a69a!important;color:#616161!important;font-style:italic!important}</textarea>
+    <button onclick="copyCSS()">CSSコードをコピー</button>
+  </div>
+
+
+  <div class="card">
+    <h2>始めるとき</h2>
+      <h4>まずheadタグ内にこのようなコードを貼り付けてください。</h4>
+      <h4>&lt;link rel="stylesheet" href="style.css"&gt;
+</h4>
+      <h4>そしてstyle.cssを作ってそのなかに上の文字をコピー＆ペーストをしてください。
+          <br>これでセットアップは完了です。</h4>
+      
+  </div>
+
+  <div class="card">
+    <h2>各タグ固有のクラス動作仕様</h2>
+    <p>対象要素にクラスを付与した際の、それぞれのタグ特性を活かした挙動変化の一覧です。</p>
+    
+    <table class="table-spec">
+      <thead>
+        <tr>
+          <th>モード</th>
+          <th>対象タグ</th>
+          <th>クラスON時の個別挙動・最適化内容</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="4" style="background:#f9f9f9;font-weight:bold">dark<br>(ダーク)</td>
+          <td><span class="tag-badge">html</span> <span class="tag-badge">body</span> <span class="tag-badge">div</span> <span class="tag-badge">article</span></td>
+          <td>コンテナ要素の背景を漆黒（#121212）にし、全体の基本文字色を白へ変更。</td>
+        </tr>
+        <tr>
+          <td><span class="tag-badge">p</span> <span class="tag-badge">span</span> <span class="tag-badge">h1〜h6</span> <span class="tag-badge">li</span></td>
+          <td>テキストの眩しさを抑えた低コントラストの白（#e0e0e0）に最適化。</td>
+        </tr>
+        <tr>
+          <td><span class="tag-badge">input</span> <span class="tag-badge">textarea</span> <span class="tag-badge">button</span></td>
+          <td>入力欄の背景を暗転。枠線をグレーにし、フォーカス時の発光色を暗所用に変更。</td>
+        </tr>
+        <tr>
+          <td><span class="tag-badge">img</span> <span class="tag-badge">video</span> <span class="tag-badge">iframe</span></td>
+          <td>メディアの輝度を20%下げ、コントラストを調整して夜間の目への刺激を軽減。</td>
+        </tr>
+        
+        <tr>
+          <td rowspan="4" style="background:#f9f9f9;font-weight:bold">focus<br>(集中)</td>
+          <td><span class="tag-badge">html</span> <span class="tag-badge">body</span> <span class="tag-badge">main</span> <span class="tag-badge">div</span></td>
+          <td>領域内を完全な白黒（グレースケール）にし、余計な色情報を遮断。</td>
+        </tr>
+        <tr>
+          <td><span class="tag-badge">aside</span> <span class="tag-badge">nav</span> <span class="tag-badge">footer</span></td>
+          <td>サイドバー、ナビゲーション、広告枠など、視覚的ノイズになる要素を完全非表示。</td>
+        </tr>
+        <tr>
+          <td><span class="tag-badge">h1〜h3</span></td>
+          <td>見出しの左側に太い縦線を強制付与。周囲との境界を明確にして視線を誘導。</td>
+        </tr>
+        <tr>
+          <td><span class="tag-badge">img[src$=".gif"]</span> <span class="tag-badge">marquee</span></td>
+          <td>画面内で動き続けるアニメーションGIFや動く文字を強制的にストップ・非表示。</td>
+        </tr>
+        
+        <tr>
+          <td rowspan="4" style="background:#f9f9f9;font-weight:bold">read<br>(読解)</td>
+          <td><span class="tag-badge">body</span> <span class="tag-badge">main</span> <span class="tag-badge">article</span></td>
+          <td>横幅を読解に最適な720pxに固定し、自動で中央寄せ。背景を紙に近いセピア調に変更。</td>
+        </tr>
+        <tr>
+          <td><span class="tag-badge">p</span></td>
+          <td>文字サイズを19pxに拡大。行間を通常の2倍に広げ、一文字ずつの間隔を微増。</td>
+        </tr>
+        <tr>
+          <td><span class="tag-badge">h1〜h3</span></td>
+          <td>上下の空間（マージン）を大幅に確保し、文章のセクション区切りを視覚的に強調。</td>
+        </tr>
+        <tr>
+          <td><span class="tag-badge">blockquote</span></td>
+          <td>左側にマテリアルカラーのアクセント線を引き、フォントをイタリック化して引用を明示。</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><span class="code-inline">&lt;body class="dark focus"&gt;</span> のように親要素に複数書けば、配下のすべてのタグにそれぞれの固有効果が同時に適用されます。</p>
+  </div><br>
+    <h6>(C) 2026 norituru. All rights reserved.</h6>
+
+  
+
+  <script>
+    function copyCSS() {
+      var copyText = document.getElementById("cssText");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(copyText.value);
+      
+      var toast = document.getElementById("toast");
+      toast.style.display = "block";
+      setTimeout(function(){ toast.style.display = "none"; }, 2000);
+    }
+  </script>
+
+</body>
+</html>
